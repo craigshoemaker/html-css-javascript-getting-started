@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #999;
+}
+
+p {
+  margin: .5em 0 .5em 0;
+}
+
+header {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #a493c0;
+  padding: 10px;
+}
+
+nav a:visited,
+nav a:link {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav > ul {
+  display: inline;
+  padding: 0;
+}
+
+nav > ul > li {
+  display: inline-block;
+  list-style: none;
+  margin: 0 5px 0 5px;
+}
+
+main {
+  background-image: url("images/background.png");
+  padding-top: 3em;
+  padding-bottom: 3em;
+}
+
+footer {
+  padding: 15px;
+}
+
+.layout-container {
+  display: flex;
+}
+
+.branding,
+.content {
+  padding: 2em;
+}
+
+.branding {
+  margin-left: 2%;
+}
