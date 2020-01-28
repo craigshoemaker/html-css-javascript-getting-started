@@ -75,8 +75,43 @@ footer {
   .branding {
     margin-left: 2%;
   }
-
-  .content {
-    width: 350px;
-  }
 }
+
+
+/* Pie */
+.pie {
+  width: 200px;
+  padding: 10px;
+  margin: 10px;
+  background-color: #fff;
+  border:solid 1px #ccc;
+}
+
+.pie img {
+  width: 100%;
+}
+
+.pie .title {
+  font-weight: bold;
+}
+
+.pie .price {
+  text-align: right;
+}
+
+.pie .layout-container {
+  width: 100%;
+}
+
+.pie .layout-container div {
+  width: 50%;
+}
+
+.pie button {
+  background-color: #f6aeae;
+  padding: 10px;
+  border: solid 1px #f6aeae;
+  border-radius: 3px;
+  color: #fff;
+}
+/* /Pie */

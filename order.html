@@ -8,9 +8,14 @@
   <title>Order | Bethany's Pie Shop</title>
   <link rel="stylesheet" href="site.css" type="text/css">
   <style>
-    .selected-pie {
-      margin: 20px 20px 20px 0;
-      padding: 10px;
+    
+    @media only screen and (min-width: 768px) {
+      .content {
+        width: 350px;
+      }
+    }
+
+    .pie {
       margin-bottom: 20px;
     }
 
@@ -63,7 +68,7 @@
       <div class="content">
         <h1>Order</h1>
 
-        <div class="selected-pie">
+        <div class="pie">
           <img src="">
           <div class="layout-container">
             <div class="title">Apple Pie</div c>
@@ -181,7 +186,7 @@
       const order = JSON.parse(localStorage.getItem('order'));
 
       if (order) {
-        const container = document.querySelector('.selected-pie');
+        const container = document.querySelector('.pie');
         const title = container.querySelector('.title');
         const price = container.querySelector('.price');
         const desc = container.querySelector('.desc');
