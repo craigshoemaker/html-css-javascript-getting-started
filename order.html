@@ -8,11 +8,6 @@
   <title>Order | Bethany's Pie Shop</title>
   <link rel="stylesheet" href="site.css" type="text/css">
   <style>
-    .content {
-      width: 100%;
-      max-width: 350px;
-    }
-
     .selected-pie {
       margin: 20px 20px 20px 0;
       padding: 10px;
@@ -69,14 +64,13 @@
         <h1>Order</h1>
 
         <div class="selected-pie">
-          <img src="images/apple-pie.png" alt="Apple pie">
+          <img src="">
           <div class="layout-container">
-            <div>Apple Pie</div>
-            <div>$12.95</div>
+            <div class="title">Apple Pie</div c>
+            <div class="price">$12.95</div>
           </div>
-          <p>Our famous apple pie</p>
+          <p class="desc">Our famous apple pie</p>
         </div>
-
 
         <form action="" method="POST">
 
@@ -184,7 +178,22 @@
 
     window.addEventListener('DOMContentLoaded', function (e) {
 
-      console.log('loaded');
+      const order = JSON.parse(localStorage.getItem('order'));
+
+      if (order) {
+        const container = document.querySelector('.selected-pie');
+        const title = container.querySelector('.title');
+        const price = container.querySelector('.price');
+        const desc = container.querySelector('.desc');
+
+        title.innerText = order.title;
+        price.innerText = order.price;
+        desc.innerText = order.desc;
+
+        const img = container.querySelector('img');
+        img.setAttribute('src', `images/${ order.id }.png`);
+        img.setAttribute('alt', order.title);
+      }
 
     }, false);
 

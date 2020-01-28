@@ -2,7 +2,8 @@
   margin: 0;
 }
 
-html {
+html,
+body {
   height: 100%;
 }
 
@@ -46,6 +47,7 @@ main {
   background-image: url("images/background.png");
   padding-top: 3em;
   padding-bottom: 3em;
+  min-height: 85%;
 }
 
 footer {
@@ -53,7 +55,7 @@ footer {
 }
 
 .layout-container {
-  display: flex;
+  display: block;
 }
 
 .branding,
@@ -61,6 +63,20 @@ footer {
   padding: 2em;
 }
 
-.branding {
-  margin-left: 2%;
+.content {
+  width: 75%;
+}
+
+@media only screen and (min-width: 768px) {
+  .layout-container {
+    display: flex;
+  }
+
+  .branding {
+    margin-left: 2%;
+  }
+
+  .content {
+    width: 350px;
+  }
 }
