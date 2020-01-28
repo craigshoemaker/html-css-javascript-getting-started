@@ -54,25 +54,25 @@ footer {
   padding: 15px;
 }
 
-.layout-container {
+.columns-desktop {
   display: block;
 }
 
-.branding,
-.content {
+aside,
+article {
   padding: 2em;
 }
 
-.content {
+article {
   width: 75%;
 }
 
 @media only screen and (min-width: 768px) {
-  .layout-container {
+  .columns-desktop {
     display: flex;
   }
 
-  .branding {
+  aside {
     margin-left: 2%;
   }
 }
@@ -99,11 +99,11 @@ footer {
   text-align: right;
 }
 
-.pie .layout-container {
+.pie .columns-desktop {
   width: 100%;
 }
 
-.pie .layout-container div {
+.pie .columns-desktop div {
   width: 50%;
 }
 
@@ -114,4 +114,3 @@ footer {
   border-radius: 3px;
   color: #fff;
 }
-/* /Pie */

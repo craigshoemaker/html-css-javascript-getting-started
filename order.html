@@ -10,7 +10,7 @@
   <style>
     
     @media only screen and (min-width: 768px) {
-      .content {
+      article {
         width: 350px;
       }
     }
@@ -62,15 +62,15 @@
       </ul>
     </nav>
   </header>
-  <main>
-    <div class="layout-container">
-      <div class="branding"><img src="images/logo.png" alt="Bethany's Pie Shop"></div>
-      <div class="content">
+  <main class="columns-desktop">
+
+      <aside><img src="images/logo.png" alt="Bethany's Pie Shop"></aside>
+      <article>
         <h1>Order</h1>
 
         <div class="pie">
           <img src="">
-          <div class="layout-container">
+          <div class="columns-desktop">
             <div class="title">Apple Pie</div c>
             <div class="price">$12.95</div>
           </div>
@@ -167,8 +167,7 @@
           <input type="submit" value="Order">
           
         </form>
-      </div>
-    </div>
+      </article>
   </main>
   <footer>
     <nav>
@@ -186,16 +185,16 @@
       const order = JSON.parse(localStorage.getItem('order'));
 
       if (order) {
-        const container = document.querySelector('.pie');
-        const title = container.querySelector('.title');
-        const price = container.querySelector('.price');
-        const desc = container.querySelector('.desc');
+        const pie = document.querySelector('.pie');
+        const title = pie.querySelector('.title');
+        const price = pie.querySelector('.price');
+        const desc = pie.querySelector('.desc');
 
         title.innerText = order.title;
         price.innerText = order.price;
         desc.innerText = order.desc;
 
-        const img = container.querySelector('img');
+        const img = pie.querySelector('img');
         img.setAttribute('src', `images/${ order.id }.png`);
         img.setAttribute('alt', order.title);
       }

@@ -17,36 +17,41 @@
         </ul>
       </nav>
     </header>
-    <main>
-      <div class="layout-container">
-        <div class="branding">
+    <main class="columns-desktop">
+
+        <aside>
           <img src="images/logo.png" alt="Bethany's Pie Shop" />
-        </div>
-        <div class="content">
+        </aside>
+
+        <article>
           <h1>Pies</h1>
-          <article class="layout-container">
+
+          <section class="columns-desktop">
+
             <div class="pie">
               <img src="images/apple-pie.png" alt="Apple Pie" />
-              <div class="layout-container">
+              <div class="columns-desktop">
                 <div class="title">Apple Pie</div>
                 <div class="price">$12.95</div>
               </div>
               <p class="desc">Our famous apple pie</p>
               <button data-order="apple-pie">Order</button>
             </div>
+
             <div class="pie">
               <img src="images/cherry-pie.png" alt="Chery Pie" />
-              <div class="layout-container">
+              <div class="columns-desktop">
                 <div class="title">Cherry Pie</div>
                 <div class="price">$15.95</div>
               </div>
               <p class="desc">A summer classic!</p>
               <button data-order="cherry-pie">Order</button>
             </div>
-          </article>
-        </div>
-      </div>
+
+          </section>
+        </article>
     </main>
+
     <footer>
       <nav>
         <ul>
@@ -56,14 +61,15 @@
         </ul>
       </nav>
     </footer>
+
   </body>
   <script>
-    window.addEventListener(
-      "DOMContentLoaded",
-      function(e) {
+    window.addEventListener("DOMContentLoaded", function(e) {
+
         const orderButtons = document.querySelectorAll("button[data-order]");
 
         [].forEach.call(orderButtons, function(button) {
+
           button.addEventListener("click", function(e) {
             const button = e.currentTarget;
             const id = button.getAttribute("data-order");
@@ -85,8 +91,7 @@
             window.location.href = url;
           });
         });
-      },
-      false
-    );
+      }, false);
+
   </script>
 </html>
