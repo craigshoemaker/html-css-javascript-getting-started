@@ -44,6 +44,7 @@ nav > ul > li {
 }
 
 main {
+  display: block;
   background-image: url("images/background.png");
   padding-top: 3em;
   padding-bottom: 3em;
@@ -52,10 +53,6 @@ main {
 
 footer {
   padding: 15px;
-}
-
-.columns-desktop {
-  display: block;
 }
 
 aside,
@@ -67,13 +64,21 @@ article {
   width: 75%;
 }
 
+.columns {
+  display: flex;
+}
+
 @media only screen and (min-width: 768px) {
-  .columns-desktop {
+  main {
     display: flex;
   }
 
   aside {
     margin-left: 2%;
+  }
+
+  .columns-desktop {
+    display: flex;
   }
 }
 
@@ -99,11 +104,11 @@ article {
   text-align: right;
 }
 
-.pie .columns-desktop {
+.pie .columns {
   width: 100%;
 }
 
-.pie .columns-desktop div {
+.pie .columns div {
   width: 50%;
 }
 
