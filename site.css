@@ -60,6 +60,10 @@ article {
   padding: 2em;
 }
 
+aside {
+  text-align: center;
+}
+
 article {
   width: 75%;
 }
