@@ -78,8 +78,10 @@
           </div>
           <p class="desc"></p>
         </div>
-
+        <!-- http://localhost:7071/api/post -->
         <form action="https://pieshopapis.azurewebsites.net/api/post" method="POST">
+
+          <input type="hidden" id="pie-order" name="pie-order" />
 
           <div class="input-group">
             <div><label for="first-name">First name</label></div>
@@ -184,24 +186,28 @@
 
     window.addEventListener('DOMContentLoaded', function (e) {
 
-      const order = JSON.parse(localStorage.getItem('order'));
+      const order = localStorage.getItem('order');
+      const pieOrder = JSON.parse(order);
 
       if (order) {
         const pie = document.querySelector('.pie');
         const title = pie.querySelector('.title');
         const price = pie.querySelector('.price');
         const desc = pie.querySelector('.desc');
+        const orderInput = document.getElementById('pie-order');
 
-        title.innerText = order.title;
-        price.innerText = order.price;
-        desc.innerText = order.desc;
+        orderInput.value = order;
+
+        title.innerText = pieOrder.title;
+        price.innerText = pieOrder.price;
+        desc.innerText = pieOrder.desc;
 
         const img = pie.querySelector('img');
-        img.setAttribute('src', `images/${ order.id }.png`);
-        img.setAttribute('alt', order.title);
+        img.setAttribute('src', `images/${ pieOrder.id }.png`);
+        img.setAttribute('alt', pieOrder.title);
       }
 
-    }, false);
+    });
 
   </script>
 </body>
