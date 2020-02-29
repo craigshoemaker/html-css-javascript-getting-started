@@ -68,6 +68,7 @@
       <aside><img src="images/logo.png" alt="Bethany's Pie Shop"></aside>
 
       <article>
+        <!-- ADD CONTENT HERE -->
         <h1>Order</h1>
 
         <div class="pie">
@@ -196,11 +197,11 @@
         const desc = pie.querySelector('.desc');
         const orderInput = document.getElementById('pie-order');
 
-        orderInput.value = order;
-
         title.innerText = pieOrder.title;
         price.innerText = pieOrder.price;
         desc.innerText = pieOrder.desc;
+        
+        orderInput.value = order;
 
         const img = pie.querySelector('img');
         img.setAttribute('src', `images/${ pieOrder.id }.png`);
