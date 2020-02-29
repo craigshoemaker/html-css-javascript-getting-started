@@ -72,17 +72,13 @@
 
           button.addEventListener("click", function(e) {
             const button = e.currentTarget;
-            const id = button.getAttribute("data-order");
             const container = button.parentNode;
-            const title = container.querySelector(".title").innerText;
-            const price = container.querySelector(".price").innerText;
-            const desc = container.querySelector(".desc").innerText;
 
             const order = {
-              title: title,
-              id: id,
-              price: price,
-              desc: desc
+              id: id = button.getAttribute("data-order"),
+              title: container.querySelector(".title").innerText,
+              price: container.querySelector(".price").innerText,
+              desc: container.querySelector(".desc").innerText
             };
 
             localStorage.setItem("order", JSON.stringify(order));
