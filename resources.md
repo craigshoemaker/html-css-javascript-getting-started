@@ -36,6 +36,8 @@ The following resources can help you better understand the concepts, elements, a
 - [How cascading works](https://developer.mozilla.org/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance)
 - [Selectors](https://developer.mozilla.org/docs/Learn/CSS/Building_blocks/Selectors)
   - [Cheat sheet](https://frontend30.com/css-selectors-cheatsheet/)
+- [Box model](https://developer.mozilla.org/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model)
+- [`float` property](https://developer.mozilla.org/docs/Web/CSS/float)
 - [Layout techniques](https://developer.mozilla.org/docs/Learn/CSS/CSS_layout/Introduction)
 - [Beginner's guide to media queries](https://developer.mozilla.org/docs/Learn/CSS/CSS_layout/Media_queries)
 
