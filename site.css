@@ -13,7 +13,7 @@ body {
 }
 
 p {
-  margin: .5em 0 .5em 0;
+  margin: 0.5em 0 0.5em 0;
 }
 
 header {
@@ -86,14 +86,13 @@ article {
   }
 }
 
-
 /* Pie */
 .pie {
   width: 200px;
   padding: 10px;
   margin: 10px;
   background-color: #fff;
-  border:solid 1px #ccc;
+  border: solid 1px #ccc;
 }
 
 .pie img {

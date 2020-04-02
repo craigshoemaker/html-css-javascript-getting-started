@@ -1,102 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Order | Bethany's Pie Shop</title>
-  <link rel="stylesheet" href="site.css" type="text/css">
-  <style>
-    
-    @media only screen and (min-width: 768px) {
-      article {
-        width: 350px;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Order | Bethany's Pie Shop</title>
+    <link rel="stylesheet" href="site.css" type="text/css" />
+    <style>
+      @media only screen and (min-width: 768px) {
+        article {
+          width: 350px;
+        }
       }
-    }
 
-    .pie {
-      margin-bottom: 20px;
-    }
+      .pie {
+        margin-bottom: 20px;
+      }
 
-    .input-group {
-      margin-bottom: 20px;
-    }
+      .input-group {
+        margin-bottom: 20px;
+      }
 
-    .input-group input,
-    .input-group textarea,
-    .input-group select {
-      padding: 10px;
-      border: solid 1px #999;
-      border-radius: 2px;
-      width: 100%;
-    }
+      .input-group input,
+      .input-group textarea,
+      .input-group select {
+        padding: 10px;
+        border: solid 1px #999;
+        border-radius: 2px;
+        width: 100%;
+      }
 
-    label {
-      font-weight: 600;
-    }
+      label {
+        font-weight: 600;
+      }
 
-    input[type="reset"] {
-      background: transparent;
-      border: 0;
-      text-decoration: underline;
-      cursor: pointer;
-    }
+      input[type="reset"] {
+        background: transparent;
+        border: 0;
+        text-decoration: underline;
+        cursor: pointer;
+      }
 
-    input[type="submit"] {
-      border: solid 1px #999;
-      border-radius: 3px;
-      padding: 10px;
-    }
+      input[type="submit"] {
+        border: solid 1px #999;
+        border-radius: 3px;
+        padding: 10px;
+      }
+    </style>
+  </head>
 
-  </style>
-</head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="pies.html">Pies</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
 
-<body>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="pies.html">Pies</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main>
-
-      <aside><img src="images/logo.png" alt="Bethany's Pie Shop"></aside>
+    <main>
+      <aside><img src="images/logo.png" alt="Bethany's Pie Shop" /></aside>
 
       <article>
         <!-- ADD CONTENT HERE -->
         <h1>Order</h1>
 
         <div class="pie">
-          <img src="">
+          <img src="" />
           <div class="columns">
             <div class="title"></div>
             <div class="price"></div>
           </div>
           <p class="desc"></p>
         </div>
-        <!-- http://localhost:7071/api/post -->
-        <form action="https://pieshopapis.azurewebsites.net/api/post" method="POST">
 
+        <form action="http://localhost:7071/api/post" method="POST">
           <input type="hidden" id="pie-order" name="pie-order" />
 
           <div class="input-group">
             <div><label for="first-name">First name</label></div>
-            <div><input type="text" name="first-name" id="first-name"></div>
+            <div><input type="text" name="first-name" id="first-name" /></div>
           </div>
 
           <div class="input-group">
             <div><label for="last-name">Last name</label></div>
-            <div><input type="text" name="last-name" id="last-name"></div>
+            <div><input type="text" name="last-name" id="last-name" /></div>
           </div>
 
           <div class="input-group">
             <div><label for="address">Address</label></div>
-            <div><input type="text" name="address" id="address"></div>
+            <div><input type="text" name="address" id="address" /></div>
           </div>
 
           <div class="input-group">
@@ -160,57 +155,58 @@
 
           <div class="input-group">
             <div><label for="postal-code">Postal code</label></div>
-            <div><input type="text" name="postal-code" id="postal-code"></div>
+            <div><input type="text" name="postal-code" id="postal-code" /></div>
           </div>
 
           <div class="input-group">
             <div><label for="comments">Comments</label></div>
-            <div><textarea name="comments" id="comments" cols="30" rows="10"></textarea></div>
+            <div>
+              <textarea
+                name="comments"
+                id="comments"
+                cols="30"
+                rows="10"
+              ></textarea>
+            </div>
           </div>
 
-          <input type="reset" value="Reset">
-          <input type="submit" value="Order">
-          
+          <input type="reset" value="Reset" />
+          <input type="submit" value="Order" />
         </form>
       </article>
-  </main>
-  <footer>
-    <nav>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="pies.html">Pies</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </footer>
-  <script type="text/javascript">
+    </main>
+    <footer>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="pies.html">Pies</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </footer>
+    <script type="text/javascript">
+      window.addEventListener("DOMContentLoaded", function(e) {
+        const order = localStorage.getItem("order");
+        const pieOrder = JSON.parse(order);
 
-    window.addEventListener('DOMContentLoaded', function (e) {
+        if (order) {
+          const pie = document.querySelector(".pie");
+          const title = pie.querySelector(".title");
+          const price = pie.querySelector(".price");
+          const desc = pie.querySelector(".desc");
+          const orderInput = document.getElementById("pie-order");
 
-      const order = localStorage.getItem('order');
-      const pieOrder = JSON.parse(order);
+          title.innerText = pieOrder.title;
+          price.innerText = pieOrder.price;
+          desc.innerText = pieOrder.desc;
 
-      if (order) {
-        const pie = document.querySelector('.pie');
-        const title = pie.querySelector('.title');
-        const price = pie.querySelector('.price');
-        const desc = pie.querySelector('.desc');
-        const orderInput = document.getElementById('pie-order');
+          orderInput.value = order;
 
-        title.innerText = pieOrder.title;
-        price.innerText = pieOrder.price;
-        desc.innerText = pieOrder.desc;
-        
-        orderInput.value = order;
-
-        const img = pie.querySelector('img');
-        img.setAttribute('src', `images/${ pieOrder.id }.png`);
-        img.setAttribute('alt', pieOrder.title);
-      }
-
-    });
-
-  </script>
-</body>
-
+          const img = pie.querySelector("img");
+          img.setAttribute("src", `images/${pieOrder.id}.png`);
+          img.setAttribute("alt", pieOrder.title);
+        }
+      });
+    </script>
+  </body>
 </html>

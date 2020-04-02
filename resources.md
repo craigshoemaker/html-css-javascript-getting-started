@@ -46,6 +46,7 @@ The following resources can help you better understand the concepts, elements, a
 - [Overview](https://developer.mozilla.org/docs/Web/javascript)
 - [`script` element](https://developer.mozilla.org/docs/Web/HTML/Element/script)
 - [Client-side APIs](https://developer.mozilla.org/docs/Learn/JavaScript/Client-side_web_APIs/Introduction)
+- [List of event targets](https://developer.mozilla.org/docs/Web/Events)
 - [`DOMContentLoaded` event](https://developer.mozilla.org/docs/Web/API/Document/DOMContentLoaded_event)
 - [List of Web APIs](https://developer.mozilla.org/docs/Web/API)
 - [Web Storage](https://developer.mozilla.org/docs/Web/API/Web_Storage_API)
