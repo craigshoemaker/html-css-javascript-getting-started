@@ -63,7 +63,8 @@
     window.addEventListener("DOMContentLoaded", function(e) {
       const orderButtons = document.querySelectorAll("button[data-order]");
 
-      [].forEach.call(orderButtons, function(button) {
+      orderButtons.forEach(function(button) {
+        
         button.addEventListener("click", function(e) {
           const button = e.currentTarget;
           const container = button.parentNode;
