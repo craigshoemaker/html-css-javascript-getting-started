@@ -56,6 +56,9 @@
           <li><a href="/">Home</a></li>
           <li><a href="pies.html">Pies</a></li>
           <li><a href="contact.html">Contact</a></li>
+          <li><a href="sides.html">Sides</a></li>
+          <li><a href="drinks.html">Drinks</a></li>
+
         </ul>
       </nav>
     </header>
@@ -67,114 +70,19 @@
         <!-- ADD CONTENT HERE -->
         <h1>Order</h1>
 
-        <div class="pie">
-          <img src="" />
+        <div class="drink">
+          
           <div class="columns">
             <div class="title"></div>
             <div class="price"></div>
           </div>
-          <p class="desc"></p>
+          
         </div>
+        
+       
+        
 
-        <form action="http://localhost:7071/api/post" method="POST">
-          <input type="hidden" id="pie-order" name="pie-order">
-          <input type="hidden" id="location" name="location">
-
-          <div class="input-group">
-            <div><label for="first-name">First name</label></div>
-            <div><input type="text" name="first-name" id="first-name" /></div>
-          </div>
-
-          <div class="input-group">
-            <div><label for="last-name">Last name</label></div>
-            <div><input type="text" name="last-name" id="last-name" /></div>
-          </div>
-
-          <div class="input-group">
-            <div><label for="address">Address</label></div>
-            <div><input type="text" name="address" id="address" /></div>
-          </div>
-
-          <div class="input-group">
-            <div><label for="state">State</label></div>
-            <div>
-              <select name="state" id="state">
-                <option value="" selected>[ Select one ]</option>
-                <option value="Alabama">Alabama</option>
-                <option value="Alaska">Alaska</option>
-                <option value="Arizona">Arizona</option>
-                <option value="Arkansas">Arkansas</option>
-                <option value="California">California</option>
-                <option value="Colorado">Colorado</option>
-                <option value="Connecticut">Connecticut</option>
-                <option value="Delaware">Delaware</option>
-                <option value="Florida">Florida</option>
-                <option value="Georgia">Georgia</option>
-                <option value="Hawaii">Hawaii</option>
-                <option value="Idaho">Idaho</option>
-                <option value="Illinois">Illinois</option>
-                <option value="Indiana">Indiana</option>
-                <option value="Iowa">Iowa</option>
-                <option value="Kansas">Kansas</option>
-                <option value="Kentucky">Kentucky</option>
-                <option value="Louisiana">Louisiana</option>
-                <option value="Maine">Maine</option>
-                <option value="Maryland">Maryland</option>
-                <option value="Massachusetts">Massachusetts</option>
-                <option value="Michigan">Michigan</option>
-                <option value="Minnesota">Minnesota</option>
-                <option value="Mississippi">Mississippi</option>
-                <option value="Missouri">Missouri</option>
-                <option value="Montana">Montana</option>
-                <option value="Nebraska">Nebraska</option>
-                <option value="Nevada">Nevada</option>
-                <option value="New Hampshire">New Hampshire</option>
-                <option value="New Jersey">New Jersey</option>
-                <option value="New Mexico">New Mexico</option>
-                <option value="New York">New York</option>
-                <option value="North Carolina">North Carolina</option>
-                <option value="North Dakota">North Dakota</option>
-                <option value="Ohio">Ohio</option>
-                <option value="Oklahoma">Oklahoma</option>
-                <option value="Oregon">Oregon</option>
-                <option value="Pennsylvania">Pennsylvania</option>
-                <option value="Rhode Island">Rhode Island</option>
-                <option value="South Carolina">South Carolina</option>
-                <option value="South Dakota">South Dakota</option>
-                <option value="Tennessee">Tennessee</option>
-                <option value="Texas">Texas</option>
-                <option value="Utah">Utah</option>
-                <option value="Vermont">Vermont</option>
-                <option value="Virginia">Virginia</option>
-                <option value="Washington">Washington</option>
-                <option value="West Virginia">West Virginia</option>
-                <option value="Wisconsin">Wisconsin</option>
-                <option value="Wyoming">Wyoming</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="input-group">
-            <div><label for="postal-code">Postal code</label></div>
-            <div><input type="text" name="postal-code" id="postal-code" /></div>
-          </div>
-
-          <div class="input-group">
-            <div><label for="comments">Comments</label></div>
-            <div>
-              <textarea
-                name="comments"
-                id="comments"
-                cols="30"
-                rows="10"
-              ></textarea>
-            </div>
-          </div>
-
-          <input type="reset" value="Reset" />
-          <input type="submit" value="Order" />
-        </form>
-      </article>
+        </article>
     </main>
     <footer>
       <nav>
@@ -187,49 +95,36 @@
     </footer>
     <script type="text/javascript">
 
-      window.addEventListener("DOMContentLoaded", function(e) {
+        
 
-        let locationBox = document.querySelector("#location");
-        let location = {
-          latitude: "unknown",
-          longitude: "unknown"
-        };
+        const drinks = ['pepsi','pepsi-max','dr-pepper','7-up'];
+        drinks.forEach(drinkName => drinksFunction(drinkName));
 
-        window.navigator.geolocation.getCurrentPosition(
-          function(position) {
-
-            location = {
-              latitude: position.coords.latitude,
-              longitude: position.coords.longitude
-            };
-
-            locationBox.value = JSON.stringify(location);
-          },
-          function(error) {
-            locationBox.value = JSON.stringify(location);
-          });
-
-        const order = localStorage.getItem("order");
-        const pieOrder = JSON.parse(order);
-
-        if (order) {
-          const pie = document.querySelector(".pie");
-          const title = pie.querySelector(".title");
-          const price = pie.querySelector(".price");
-          const desc = pie.querySelector(".desc");
-          const orderInput = document.querySelector("#pie-order");
-
-          title.innerText = pieOrder.title;
-          price.innerText = pieOrder.price;
-          desc.innerText = pieOrder.desc;
-
-          orderInput.value = order;
-
-          const img = pie.querySelector("img");
-          img.setAttribute("src", `images/${pieOrder.id}.png`);
-          img.setAttribute("alt", pieOrder.title);
+        function drinksFunction(drinkName){
+          const drink = document.querySelector(".drink");
+          const title = drink.querySelector(".title");
+          const price = drink.querySelector(".price");
+          const drink_order = localStorage.getItem(drinkName);
+          if (drink_order){
+            const drinkOrder = JSON.parse(drink_order);
+            drink.innerText += drinkOrder.title;
+            drink.innerText += drinkOrder.price;
+          }
         }
-      });
+        
+
+        
+       
+        
+        
+      
+
+        
+        
+    
     </script>
+    <div>
+
+    </div>
   </body>
 </html>

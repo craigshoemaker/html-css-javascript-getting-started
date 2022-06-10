@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>drinks | Bethany's drink Shop</title>
+    <link rel="stylesheet" href="site.css" type="text/css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="drinks.html">drinks</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="sides.html">Sides</a></li>
+          <li><a href="drinks.html">Drinks</a></li>
+          <li><a href="order.html">Order</a></li>
+          
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <aside>
+        <img src="images/logo.png" alt="Bethany's drink Shop" />
+      </aside>
+
+      <article>
+        <h1>Drinks</h1>
+
+        <section class="columns-desktop">
+          <div class="drink">
+            <img src="https://snackstopstore.com/wp-content/uploads/2021/07/Pepsi-1L.jpg" width="200" height="200" alt="Pepsi" />
+            <div class="columns">
+              <div class="title">Pepsi 1L</div>
+              <div class="price">£2.49</div>
+            </div>
+            <button data-order="pepsi">Order</button>
+          </div>
+
+          <div class="drink">
+            <img src="https://img3.zakaz.ua/16022021.1613416780.ad72436478c_2021-02-16_Tatyana_L/16022021.1613416780.SNCPSG10.obj.0.1.jpg.oe.jpg.pf.jpg.1350nowm.jpg.1350x.jpg" width="200" height="200" alt="Pepsi Max" />
+            <div class="columns">
+              <div class="title">Pepsi Max 1L</div>
+              <div class="price">£2.49</div>
+            </div>
+            <button data-order="pepsi-max">Order</button>
+          </div>
+
+          <div class="drink">
+            <img src="https://www.londondrugs.com/on/demandware.static/-/Sites-londondrugs-master/default/dwc934f205/products/L6307748/large/L6307748.JPG" width="200" height="200" alt="Dr Pepper" />
+            <div class="columns">
+              <div class="title">Dr Pepper 1L</div>
+              <div class="price">£2.49</div>
+            </div>
+          </div>
+
+          <div class="drink">
+            <img src="https://www.capitalmart-eg.com/wp-content/uploads/2021/01/7up.png" width="200" height="200" alt="7-up" />
+            <div class="columns">
+              <div class="title">7-up 1L</div>
+              <div class="price">£2.49</div>
+            </div>
+            <button data-order="7-up">Order</button>
+          </div>
+
+          <div class="drink">
+            <img src="https://www.poundland.co.uk/media/catalog/product/cache/1000f428e3582388cb918e2504abceb2/1/8/181093.jpg" width="200" height="200" alt="Tango" />
+            <div class="columns">
+              <div class="title">Tango 1L</div>
+              <div class="price">£2.49</div>
+            </div>
+            <button data-order="tango">Order</button>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <footer>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="drinks.html">drinks</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </footer>
+  </body>
+  <script>
+    window.addEventListener("DOMContentLoaded", function(e) {
+      const orderButtons = document.querySelectorAll("button[data-order]");
+
+      orderButtons.forEach(function(button) {
+        
+        button.addEventListener("click", function(e) {
+          const button = e.currentTarget;
+          const container = button.parentNode;
+
+          const order = {
+            id: (id = button.getAttribute("data-order")),
+            title: container.querySelector(".title").innerText,
+            price: container.querySelector(".price").innerText,
+          };
+
+          localStorage.setItem(id,JSON.stringify(order));
+
+        
+        });
+      });
+    });
+    function appendToStorage(name, data){
+    var old = localStorage.getItem(name);
+    if(old !== null) {
+        localStorage.setItem(name, old + data);;
+    } else {
+        localStorage.setItem(name, data);
+    }
+    
+}
+
+  </script>
+</html>
