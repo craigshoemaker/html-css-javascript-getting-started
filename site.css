@@ -86,8 +86,8 @@ article {
   }
 }
 
-/* Pie */
-.pie {
+/* drink */
+.drink {
   width: 200px;
   padding: 10px;
   margin: 10px;
@@ -95,27 +95,27 @@ article {
   border: solid 1px #ccc;
 }
 
-.pie img {
+.drink img {
   width: 100%;
 }
 
-.pie .title {
+.drink .title {
   font-weight: bold;
 }
 
-.pie .price {
+.drink .price {
   text-align: right;
 }
 
-.pie .columns {
+.drink .columns {
   width: 100%;
 }
 
-.pie .columns div {
+.drink .columns div {
   width: 50%;
 }
 
-.pie button {
+.drink button {
   background-color: #f6aeae;
   padding: 10px;
   border: solid 1px #f6aeae;
